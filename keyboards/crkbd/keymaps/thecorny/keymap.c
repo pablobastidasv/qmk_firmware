@@ -34,6 +34,7 @@ enum userspace_layers {
     _NUMPAD,
     _SWITCH,
     _MOVE,
+    _DEBUG,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -47,10 +48,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 	    KC_LSFT, KC_SCLN,    KC_Q,    KC_J,    KC_K,    KC_X,			  KC_B,    KC_M,    KC_W,    KC_V,    KC_Z, KC_RSFT,
 	//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-					     KC_LGUI,LT(_NUM,KC_ENT),LALT_T(KC_SPC),KC_SPC,LT(_SYM,KC_ENT), KC_RALT
+				  KC_LGUI,LT(_NUM,KC_ENT),LALT_T(KC_SPC),      LT(_DEBUG,KC_SPC),LT(_SYM,KC_ENT), KC_RALT
 					    //`--------------------------'  `--------------------------'
 	),
-		
+
 	// colemak-dh
 	[_COLEMAK_DH] = LAYOUT_split_3x6_3(
 	//,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -60,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 	    KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
 	//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-					     KC_LGUI,LT(_NUM,KC_ENT),LALT_T(KC_SPC),KC_SPC,LT(_SYM,KC_ENT), KC_RALT
+				  KC_LGUI,LT(_NUM,KC_ENT),LALT_T(KC_SPC),      LT(_DEBUG,KC_SPC),LT(_SYM,KC_ENT), KC_RALT
 					    //`--------------------------'  `--------------------------'
 	),
 
@@ -73,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 	    KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
 	//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-					     KC_LGUI,LT(_NUM,KC_ENT),LALT_T(KC_SPC),KC_SPC,LT(_SYM,KC_ENT), KC_RALT
+				  KC_LGUI,LT(_NUM,KC_ENT),LALT_T(KC_SPC),      LT(_DEBUG,KC_SPC),LT(_SYM,KC_ENT), KC_RALT
 					    //`--------------------------'  `--------------------------'
 	),
 
@@ -86,7 +87,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 	    KC_LSFT, 	KC_Z, 	 KC_X, 	  KC_C,    KC_V,    KC_B,			  KC_N,	   KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-					     KC_LGUI,LT(_NUM,KC_ENT),LALT_T(KC_SPC),KC_SPC,LT(_SYM,KC_ENT), KC_RALT
+				  KC_LGUI,LT(_NUM,KC_ENT),LALT_T(KC_SPC),      LT(_DEBUG,KC_SPC),LT(_SYM,KC_ENT), KC_RALT
 					    //`--------------------------'  `--------------------------'
 	),
 
@@ -95,9 +96,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//,-----------------------------------------------------.                    ,-----------------------------------------------------.
 	    _______,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,		          KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSPC,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-	    _______, XXXXXXX, KC_LSFT, KC_LALT, KC_LGUI, XXXXXXX, 		       KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, XXXXXXX,  KC_DEL,
+	    _______, XXXXXXX, KC_LSFT, KC_LALT, KC_LGUI, KC_LCTL, 		       KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, XXXXXXX,  KC_DEL,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-	    _______, XXXXXXX, XXXXXXX, XXXXXXX, G(S(KC_M)), XXXXXXX,		       KC_VOLD, KC_VOLU, KC_MPLY, KC_MNXT, KC_MUTE, XXXXXXX,
+	    _______, XXXXXXX, XXXXXXX, XXXXXXX, G(S(KC_M)), XXXXXXX,		       KC_VOLD, KC_VOLU, KC_MPLY, KC_MNXT, KC_MUTE, C(S(KC_EJCT)),
 	//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
 					        _______, _______,  _______,   _______, MO(_COMMAND), _______
 					    //`--------------------------'  `--------------------------'
@@ -141,6 +142,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 					   OSM(MOD_MEH), XXXXXXX, _______,     KC_ENT,   KC_P0,  KC_PDOT
 					    //`--------------------------'  `--------------------------'
 	),
+
+	// debuging shorcuts
+	[_DEBUG] = LAYOUT_split_3x6_3(
+	//,-----------------------------------------------------.                    ,-----------------------------------------------------.
+	    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   		      S(KC_F5),  KC_F10,  KC_F11, XXXXXXX,   KC_F5, XXXXXXX,
+	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+	    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, 		      G(KC_F2),   KC_F8,   KC_F7,A(KC_F8),   KC_F9,A(KC_F9),
+	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+	    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, 		       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+	//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+					        XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
+					    //`--------------------------'  `--------------------------'
+	),
+
 
 	// layer switcher
 	[_SWITCH] = LAYOUT_split_3x6_3(
