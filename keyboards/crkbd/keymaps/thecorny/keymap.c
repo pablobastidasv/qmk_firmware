@@ -32,9 +32,9 @@ enum userspace_layers {
     _SYM,
     _COMMAND,
     _NUMPAD,
-    _SWITCH,
     _MOVE,
     _DEBUG,
+    _IDEA,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//,-----------------------------------------------------.                    ,-----------------------------------------------------.
  LT(_NUMPAD,KC_TAB), KC_QUOT, KC_COMM,  KC_DOT,    KC_P,    KC_Y,      	                  KC_F,    KC_G,    KC_C,    KC_R,    KC_L, KC_BSPC,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     LCTL_T(KC_ESC),    KC_A,    KC_O,    KC_E,    KC_U,    KC_I,			  KC_D,    KC_H,    KC_T,    KC_N,    KC_S, KC_MINS,
+     LCTL_T(KC_ESC),LT(_IDEA, KC_A),    KC_O,    KC_E,    KC_U,    KC_I,			  KC_D,    KC_H,    KC_T,    KC_N,    KC_S, KC_MINS,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 	    KC_LSFT, KC_SCLN,    KC_Q,    KC_J,    KC_K,    KC_X,			  KC_B,    KC_M,    KC_W,    KC_V,    KC_Z, KC_RSFT,
 	//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -57,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//,-----------------------------------------------------.                    ,-----------------------------------------------------.
  LT(_NUMPAD,KC_TAB), 	KC_Q, 	 KC_W, 	  KC_F,    KC_P,    KC_B,    	      		  KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, KC_BSPC,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     LCTL_T(KC_ESC),    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,  		 	  KC_M,    KC_N,    KC_E,    KC_I,    KC_O, KC_QUOT,
+     LCTL_T(KC_ESC),LT(_IDEA, KC_A),    KC_R,    KC_S,    KC_T,    KC_G,  		 	  KC_M,    KC_N,    KC_E,    KC_I,    KC_O, KC_QUOT,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 	    KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
 	//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -70,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//,-----------------------------------------------------.                    ,-----------------------------------------------------.
  LT(_NUMPAD,KC_TAB), 	KC_Q, 	 KC_W, 	  KC_F,    KC_P,    KC_G,    	      		  KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, KC_BSPC,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     LCTL_T(KC_ESC),    KC_A,    KC_R,    KC_S,    KC_T,    KC_D,  		 	  KC_H,    KC_N,    KC_E,    KC_I,    KC_O, KC_QUOT,
+     LCTL_T(KC_ESC),LT(_IDEA, KC_A),    KC_R,    KC_S,    KC_T,    KC_D,  		 	  KC_H,    KC_N,    KC_E,    KC_I,    KC_O, KC_QUOT,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 	    KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
 	//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//,-----------------------------------------------------.                    ,-----------------------------------------------------.
  LT(_NUMPAD,KC_TAB), 	KC_Q, 	 KC_W, 	  KC_E,    KC_R,    KC_T,		 	  KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSPC,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     LCTL_T(KC_ESC),    KC_A, 	 KC_S, 	  KC_D,	   KC_F,    KC_G,  			  KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT,
+     LCTL_T(KC_ESC),LT(_IDEA, KC_A), 	 KC_S, 	  KC_D,	   KC_F,    KC_G,  			  KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 	    KC_LSFT, 	KC_Z, 	 KC_X, 	  KC_C,    KC_V,    KC_B,			  KC_N,	   KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -156,17 +156,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 					    //`--------------------------'  `--------------------------'
 	),
 
-
 	// layer switcher
-	[_SWITCH] = LAYOUT_split_3x6_3(
+	[_IDEA] = LAYOUT_split_3x6_3(
 	//,-----------------------------------------------------.                    ,-----------------------------------------------------.
-	      TO(0),   TO(1),   TO(2),   TO(3),   TO(4),   TO(5),   		       XXXXXXX,   TO(7), XXXXXXX, XXXXXXX, XXXXXXX,   RESET,
+	    XXXXXXX, XXXXXXX, G(KC_1), G(KC_4), G(KC_5), G(KC_8),  		         KC_F9,G(KC_F8),G(KC_F9), XXXXXXX, XXXXXXX,G(KC_F12),
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-	    XXXXXXX, XXXXXXX, KC_BRIU, XXXXXXX, XXXXXXX, XXXXXXX, 		       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, EEP_RST,
+	    XXXXXXX, _______,S(G(KC_I)),C(S(KC_R)),C(KC_R),KC_F2, 		     G(A(KC_B)),G(KC_B), A(G(KC_LEFT)),S(KC_F6),   KC_F6,G(KC_DEL),
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-    KC_SYSTEM_SLEEP, XXXXXXX, KC_BRID, XXXXXXX, XXXXXXX, XXXXXXX, 		       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+	    XXXXXXX, XXXXXXX,A(G(KC_Z)),C(S(KC_D)),C(KC_D),G(KC_9), 		  G(A(KC_L)),C(A(KC_O)),G(A(KC_M)),G(A(KC_V)),G(A(KC_C)), XXXXXXX,
 	//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-					        XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
+					        XXXXXXX, XXXXXXX, XXXXXXX,    KC_F1, G(S(KC_F12)), XXXXXXX
 					    //`--------------------------'  `--------------------------'
 
 	),
@@ -222,11 +221,11 @@ void oled_render_layer_state(void) {
       case _NUMPAD:
         oled_write_ln_P(PSTR("Layer: Numpad"),false);
         break;
-      case _MOVE:
-        oled_write_ln_P(PSTR("Layer: Movement"),false);
+      case _DEBUG:
+        oled_write_ln_P(PSTR("Layer: Debug"),false);
         break;
-      case _SWITCH:
-        oled_write_ln_P(PSTR("Layer: Layer Switch"),false);
+      case _IDEA:
+        oled_write_ln_P(PSTR("Layer: Idea"),false);
         break;
       default:
         snprintf(string, sizeof(string), "%ld",layer_state);
