@@ -43,9 +43,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      LCTL_T(KC_ESC),LT(_IDEA, KC_A),    KC_R,    KC_S,    KC_T,    KC_G,  	 	  KC_M,    KC_N,    KC_E,    KC_I,    KC_O, KC_QUOT,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-	    KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
+	    KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, RSFT(KC_ENT),
 	//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-				  KC_LGUI,LT(_NUM,KC_ENT),LALT_T(KC_SPC),      LT(_DEBUG,KC_SPC),LT(_SYM,KC_ENT), KC_RALT
+				  KC_LGUI,MO(_NUM),LALT_T(KC_SPC),      LT(_DEBUG,KC_SPC),MO(_SYM), KC_RALT
 					    //`--------------------------'  `--------------------------'
 	),
 
@@ -56,9 +56,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      LCTL_T(KC_ESC),LT(_IDEA, KC_A), 	 KC_S, 	  KC_D,	   KC_F,    KC_G,		  KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-	    KC_LSFT, 	KC_Z, 	 KC_X, 	  KC_C,    KC_V,    KC_B,			  KC_N,	   KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
+	    KC_LSFT, 	KC_Z, 	 KC_X, 	  KC_C,    KC_V,    KC_B,			  KC_N,	   KC_M, KC_COMM,  KC_DOT, KC_SLSH, RSFT(KC_ENT),
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-				  KC_LGUI,LT(_NUM,KC_ENT),LALT_T(KC_SPC),      LT(_DEBUG,KC_SPC),LT(_SYM,KC_ENT), KC_RALT
+				  KC_LGUI,MO(_NUM),LALT_T(KC_SPC),      LT(_DEBUG,KC_SPC),MO(_SYM), KC_RALT
 					    //`--------------------------'  `--------------------------'
 	),
 
