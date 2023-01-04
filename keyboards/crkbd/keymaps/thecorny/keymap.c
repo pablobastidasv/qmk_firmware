@@ -127,14 +127,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 					    //`--------------------------'  `--------------------------'
 	),
 
-	// layer switcher
+	// layer IDEA
 	[_IDEA] = LAYOUT_split_3x6_3(
 	//,-----------------------------------------------------.                    ,-----------------------------------------------------.
-	    XXXXXXX, XXXXXXX, G(KC_1), G(KC_4), G(KC_5), G(KC_8),  		         KC_F9,G(KC_F8),G(KC_F9), XXXXXXX, XXXXXXX,G(KC_F12),
+	    XXXXXXX, XXXXXXX, G(KC_1), G(KC_4), G(KC_5), G(KC_8),  		         KC_F9,G(KC_F8),G(KC_F9), XXXXXXX, G(KC_F9),G(KC_F12),
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 	    XXXXXXX, _______,S(G(KC_I)),C(S(KC_R)),C(KC_R),KC_F2, 		     G(A(KC_B)),G(KC_B), A(G(KC_LEFT)),S(KC_F6),   KC_F6,G(KC_DEL),
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-	    XXXXXXX, XXXXXXX,A(G(KC_Z)),C(S(KC_D)),C(KC_D),G(KC_9), 		  G(A(KC_L)),C(A(KC_O)),G(A(KC_M)),G(A(KC_V)),G(A(KC_C)), XXXXXXX,
+	    XXXXXXX, XXXXXXX,A(G(KC_Z)),C(S(KC_D)),C(KC_D),A(KC_F12), 		  G(A(KC_L)),C(A(KC_O)),G(A(KC_M)),G(A(KC_V)),G(A(KC_C)), XXXXXXX,
 	//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
 					        XXXXXXX, XXXXXXX, XXXXXXX,    KC_F1, G(S(KC_F12)), XXXXXXX
 					    //`--------------------------'  `--------------------------'
